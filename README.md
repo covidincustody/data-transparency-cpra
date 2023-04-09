@@ -6,4 +6,4 @@ The first component scores transparency based on the COVID-19 data reported by a
 The second component generates visualizations of the transparency scores by data category - COVID-19 cases, vaccinations, etc. 
 
 # Instructions
-Download repository and modify run.py file to reflect the appropriate read and write paths. Execute file as ``python3 run.py``
+Download repository and modify run.py file to reflect the appropriate read and write paths. Execute file as ``python run.py``
