@@ -8,3 +8,5 @@ The second component generates visualizations of the transparency scores by data
 # Instructions
 Download repository and modify run.py file to reflect the appropriate read and write paths. 
 For simplest execution, use Anaconda Environment (https://www.anaconda.com/products/distribution) which has the necessary modules or packages pre-installed. Navigate to either data-transparency-cpra/transparency-scores or data-transparency-cpra/visualizations and execute program as ``python run.py`` in the Anaconda terminal.
+
+Please contact info@covidincustody.org with any questions or concerns
