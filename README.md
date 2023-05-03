@@ -7,6 +7,8 @@ The second component generates visualizations of the transparency scores by data
 
 # Instructions
 Download repository and modify run.py file to reflect the appropriate read and write paths. 
+The read path will be the local version the county jail data referenced above: https://docs.google.com/spreadsheets/d/1q9zoEN_nI_oBAxO8k_9kd5612gCaMHSfViU-1WKVSKY/edit#gid=0. And the write path will be a local path specified by the user where the transparency scores will be written in Excel format.
+
 For simplest execution, use Anaconda Environment (https://www.anaconda.com/products/distribution) which has the necessary modules or packages pre-installed. Navigate to either data-transparency-cpra/transparency-scores or data-transparency-cpra/visualizations and execute program as ``python run.py`` in the Anaconda terminal.
 
 Please contact info@covidincustody.org with any questions or concerns.
