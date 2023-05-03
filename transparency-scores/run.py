@@ -8,7 +8,7 @@ from utils import *
 import pandas as pd
 
 # Read the COVID data for all counties
-# Data can be downloaded from this link: https://docs.google.com/spreadsheets/d/1q9zoEN_nI_oBAxO8k_9kd5612gCaMHSfViU-1WKVSKY/edit#gid=0
+# Data can be downloaded from this link: https://docs.google.com/spreadsheets/d/1q9zoEN_nI_oBAxO8k_9kd5612gCaMHSfViU-1WKVSKY/edit#gid=0 (Ensure that the first row is the row with column headers)
 all_jails_data = pd.read_excel("C:/Users/apkom/Documents/COVID19_Data_Analysis_CA_Incarcerated_Jails/All_Data/All_Data.xlsx")
 
 # Select and order the columns of interest

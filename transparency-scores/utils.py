@@ -15,36 +15,44 @@ def gen_var_transparency_score(data_transparency_dict, var, var_data, historical
             data_transparency_dict[str(var+' point_in_time')].append(1)
             data_transparency_dict[str(var+' historical')].append(0)
             data_transparency_dict[str(var+' time_window')].append((str(var_data['As of Date'].iloc[0]), str(var_data['As of Date'].iloc[-1])))
+            data_transparency_dict[str(var + ' count')].append(len(var_data))
         elif len(var_data) >= historical_data_lim:
             data_transparency_dict[str(var+' point_in_time')].append(1)
             data_transparency_dict[str(var+' historical')].append(1)
             data_transparency_dict[str(var+' time_window')].append((str(var_data['As of Date'].iloc[0]), str(var_data['As of Date'].iloc[-1])))
+            data_transparency_dict[str(var + ' count')].append(len(var_data))
         elif len(var_data) == 0:
             data_transparency_dict[str(var+' point_in_time')].append(0)
             data_transparency_dict[str(var+' historical')].append(0)
             data_transparency_dict[str(var+' time_window')].append('not applicable')
+            data_transparency_dict[str(var + ' count')].append(len(var_data))
         else: 
             data_transparency_dict[str(var+' point_in_time')].append('invalid input')
             data_transparency_dict[str(var+' historical')].append('invalid input')
             data_transparency_dict[str(var+' time_window')].append('invalid input')
+            data_transparency_dict[str(var + ' count')].append('invalid input')
     # Initializing the key, value pair in the dictionary if it does not exist yet
     else:
         if len(var_data) >= 1 and len(var_data) < historical_data_lim:
             data_transparency_dict[str(var+' point_in_time')] = [1]
             data_transparency_dict[str(var+' historical')] = [0]
             data_transparency_dict[str(var+' time_window')] = [(str(var_data['As of Date'].iloc[0]), str(var_data['As of Date'].iloc[-1]))]
+            data_transparency_dict[str(var + ' count')] = [len(var_data)]
         elif len(var_data) >= historical_data_lim:
             data_transparency_dict[str(var+' point_in_time')] = [1]
             data_transparency_dict[str(var+' historical')] = [1]
             data_transparency_dict[str(var+' time_window')] = [(str(var_data['As of Date'].iloc[0]), str(var_data['As of Date'].iloc[-1]))]
+            data_transparency_dict[str(var + ' count')] = [len(var_data)]
         elif len(var_data) == 0:
             data_transparency_dict[str(var+' point_in_time')] = [0]
             data_transparency_dict[str(var+' historical')] = [0]
             data_transparency_dict[str(var+' time_window')] = ['not applicable']
+            data_transparency_dict[str(var + ' count')] = [len(var_data)]
         else: 
             data_transparency_dict[str(var+' point_in_time')] = ['invalid input']
             data_transparency_dict[str(var+' historical')] = ['invalid input']
             data_transparency_dict[str(var+' time_window')] = ['invalid input']
+            data_transparency_dict[str(var + ' count')] = ['invalid input']
     
     return data_transparency_dict
 
