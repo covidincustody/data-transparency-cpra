@@ -50,4 +50,4 @@ all_jails_data = all_jails_data[['As of Date', 'Facility Name', 'County',
 # Specify path to write final transparency scores table
 cpra_transparency_scores = gen_data_transparency_scores(all_data = all_jails_data, 
                                                         write_path = "C:/Users/apkom/Documents/COVID19_Data_Analysis_CA_Incarcerated_Jails/All_Data/Transparency_Scores.xlsx",
-                                                        historical_data_lim = 10)
+                                                        historical_data_lim = 50)
