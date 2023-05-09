@@ -2,6 +2,7 @@
 
 import pandas as pd
 import os
+import datetime as dt
 
 # Definitions
 
@@ -57,7 +58,7 @@ def gen_var_transparency_score(data_transparency_dict, var, var_data, historical
     return data_transparency_dict
 
 
-def gen_data_transparency_scores(all_data, write_path, historical_data_lim):
+def gen_data_transparency_scores(all_data, county_names, write_path, historical_data_lim):
     # Initializing dictionary with transparency scores
     data_transparency_dict = {}
     
@@ -65,7 +66,7 @@ def gen_data_transparency_scores(all_data, write_path, historical_data_lim):
     all_data['As of Date'] = pd.to_datetime(all_data['As of Date'])
     
     # Loop through all counties
-    for county in all_data['County'].unique():
+    for county in county_names:
         if 'County' in data_transparency_dict.keys():
             data_transparency_dict['County'].append(county)
         else:
@@ -76,7 +77,8 @@ def gen_data_transparency_scores(all_data, write_path, historical_data_lim):
             if var not in ['As of Date', 'County', 'Facility Name']:
                 # Extract var data - single var, single county
                 county_var_data = all_data[(pd.isna(all_data[var]) == False) & (all_data['County'] == county)][['As of Date', var]]
-                
+                # Format time stamp
+                county_var_data['As of Date'] = pd.to_datetime(county_var_data['As of Date']).dt.date
                 # Generate transparency scores for var data
                 data_transparency_dict = gen_var_transparency_score(data_transparency_dict = data_transparency_dict,
                                                                     var = var, 

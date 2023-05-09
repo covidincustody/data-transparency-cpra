@@ -5,11 +5,68 @@ Created on Sun Apr  9 15:06:35 2023
 @author: apkom
 """
 from utils import *
-import pandas as pd
 
 # Read the COVID data for all counties
 # Data can be downloaded from this link: https://docs.google.com/spreadsheets/d/1q9zoEN_nI_oBAxO8k_9kd5612gCaMHSfViU-1WKVSKY/edit#gid=0 (Ensure that the first row is the row with column headers)
 all_jails_data = pd.read_excel("C:/Users/apkom/Documents/COVID19_Data_Analysis_CA_Incarcerated_Jails/All_Data/All_Data.xlsx")
+all_valid_county_names = ['Alameda County',
+                    'Amador County',
+                    'Butte County',
+                    'Calaveras County',
+                    'Colusa County',
+                    'Contra Costa County',
+                    'Del Norte County',
+                    'El Dorado County',
+                    'Fresno County',
+                    'Glenn County',
+                    'Humboldt County',
+                    'Imperial County',
+                    'Inyo County',
+                    'Kern County',
+                    'Kings County',
+                    'Lake County',
+                    'Lassen County',
+                    'Los Angeles County',
+                    'Madera County',
+                    'Marin County',
+                    'Mariposa County',
+                    'Mendocino County',
+                    'Merced County',
+                    'Modoc County',
+                    'Mono County',
+                    'Monterey County',
+                    'Napa County',
+                    'Nevada County',
+                    'Orange County',
+                    'Placer County',
+                    'Plumas County',
+                    'Riverside County',
+                    'Sacramento County',
+                    'San Benito County',
+                    'San Bernardino County',
+                    'San Diego County',
+                    'San Francisco County',
+                    'San Joaquin County',
+                    'San Luis Obispo County',
+                    'San Mateo County',
+                    'Santa Barbara County',
+                    'Santa Clara County',
+                    'Santa Cruz County',
+                    'Shasta County',
+                    'Sierra County',
+                    'Siskiyou County',
+                    'Solano County',
+                    'Sonoma County',
+                    'Stanislaus County',
+                    'Sutter County',
+                    'Tehama County',
+                    'Trinity County',
+                    'Tulare County',
+                    'Tuolumne County',
+                    'Ventura County',
+                    'Yolo County',
+                    'Yuba County']
+
 
 # Select and order the columns of interest
 all_jails_data = all_jails_data[['As of Date', 'Facility Name', 'County',
@@ -49,5 +106,6 @@ all_jails_data = all_jails_data[['As of Date', 'Facility Name', 'County',
 
 # Specify path to write final transparency scores table
 cpra_transparency_scores = gen_data_transparency_scores(all_data = all_jails_data, 
+                                                        county_names = all_valid_county_names,                                                        
                                                         write_path = "C:/Users/apkom/Documents/COVID19_Data_Analysis_CA_Incarcerated_Jails/All_Data/Transparency_Scores.xlsx",
                                                         historical_data_lim = 50)
