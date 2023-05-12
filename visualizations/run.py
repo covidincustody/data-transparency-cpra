@@ -107,6 +107,3 @@ df_filter.sort_values(by = 'Transparency Scores', ascending = False, inplace = T
 y = df_filter['County'] 
 x = df_filter['Transparency Scores']
 sns.barplot(x=x, y=y, palette=gen_palette(x_val = x)).set_title('Positive Cases - Historical (>=50 data points)')
-
-
-# Test GitHub commits
