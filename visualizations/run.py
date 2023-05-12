@@ -42,7 +42,7 @@ df_filter.sort_values(by = 'Transparency Scores', ascending = False, inplace = T
 # Plot the data transparency score (%) per county
 y = df_filter['County'] 
 x = df_filter['Transparency Scores']
-sns.barplot(x=x, y=y, palette=gen_palette(x_val = x)).set_title('Vaccinations - Point in time (>= 1 data point)')
+sns.barplot(x=x, y=y, palette=gen_palette(x_val = x)).set_title('Vaccinations - Point in Time (>= 1 data point)')
 
 
 
@@ -74,7 +74,7 @@ df_filter.sort_values(by = 'Transparency Scores', ascending = False, inplace = T
 # Plot the data transparency score (%) per county
 y = df_filter['County'] 
 x = df_filter['Transparency Scores']
-sns.barplot(x=x, y=y, palette=gen_palette(x_val = x)).set_title('Positive Cases - Point in time (>=1 data point)')
+sns.barplot(x=x, y=y, palette=gen_palette(x_val = x)).set_title('Positive Cases - Point in Time (>=1 data point)')
 
 
 
